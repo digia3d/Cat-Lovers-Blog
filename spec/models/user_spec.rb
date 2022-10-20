@@ -26,7 +26,7 @@ RSpec.describe User, type: :model do
   end
 
   describe '#recent_posts' do
-    before { 5.times { |post| Post.create(author: subject, title: 'Title #{post}') } }
+    before { 5.times { |_post| Post.create(author: subject, title: "Title #{post}") } }
 
     it 'should return the 3 most recent posts' do
       expect(subject.recent_posts).to eq(subject.posts.last(3))

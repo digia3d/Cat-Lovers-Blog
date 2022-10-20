@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
   describe 'validations' do
-    author = User.create(name: 'Alex', photo: 'photo.png',bio: 'Love solving problems', posts_counter: 0)
-    post = Post.create(author: author, title: 'Title', text: 'Text', likes_counter: 0, comments_counter: 0)
-    subject { described_class.new(author: author, post: post, text: 'Text') }
+    author = User.create(name: 'Alex', photo: 'photo.png', bio: 'Love solving problems', posts_counter: 0)
+    post = Post.create(author:, title: 'Title', text: 'Text', likes_counter: 0, comments_counter: 0)
+    subject { described_class.new(author:, post:, text: 'Text') }
 
     before { subject.save }
 

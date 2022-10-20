@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Like, type: :model do
-  user = User.new(name: 'Alex', photo: 'photo.png',bio: 'Love solving problems')
+  user = User.new(name: 'Alex', photo: 'photo.png', bio: 'Love solving problems')
   post = Post.new(author: user, title: 'Title', text: 'Text')
-  subject { Like.new(author: user, post: post) }
+  subject { Like.new(author: user, post:) }
 
   before { subject }
 
