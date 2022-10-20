@@ -24,7 +24,7 @@ Things you may want to cover:
   - Ruby linter test: ``rubocop``
   - Style linter test: ``npx stylelint "**/*.{css,scss}"``
 
-## Authors
+## Author
 
 👤 **Aleksandra Ujvari**
 
