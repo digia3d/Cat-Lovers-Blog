@@ -20,4 +20,10 @@ RSpec.describe Post, type: :model do
     subject.author = nil
     expect(subject).to_not be_valid
   end
+
+  describe 'should test methods in post model' do
+    it 'post should have five recent comments' do
+      expect(subject.recent_comments).to eq(subject.comments.last(5))
+    end
+  end
 end

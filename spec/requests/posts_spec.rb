@@ -8,7 +8,7 @@ RSpec.describe 'Posts', type: :request do
     end
 
     it "should render 'index' template" do
-      expect(response).to render_template(:index)
+      expect(response).to render_template('index')
     end
 
     it 'should return the correct placeholder text' do
@@ -17,9 +17,9 @@ RSpec.describe 'Posts', type: :request do
   end
 
   describe 'GET /show' do
-    it 'returns http success' do
-      get '/posts/show'
-      expect(response).to have_http_status(:success)
+    before(:each) { get user_post_path(1, 2) }
+    it 'returns success' do
+      expect(response).to have_http_status(:ok)
     end
   end
 end
