@@ -1,2 +1,47 @@
-<h1>This is the place for all posts.</h1>
+<section class="indexP">
 
+    <div class="singleU">
+      <div class="photo">
+        <img src="<%= @user.photo %>" alt="<%= @user.name %> thumbnail" />
+      </div>
+      <div class="name">
+        <h2><%= @user.name %></h2>
+        <p>
+          Number of posts: <%= @user.posts_counter %>
+        </p>
+      </div>
+    </div>
+
+    <div class="Uposts">
+      <%= user.posts.each do |post| %>
+        <div class="postL">
+          <h3><%= link_to post.title, post_path(@user, post) %></h3>
+          <p>
+            <%= post.text %>
+          </p>
+          <span class="like">
+            Likes: <%= post.likes.count || 0 %>
+          </span>
+          <span class="comment">
+            Comments: <%= post.comments.count || 0 %>
+          </span>
+        </div>
+        <ul class="commentP">
+          <% if post.recent_comments.length == 0 %>
+            <li>
+              <p>
+                No comments yet
+              </p>
+            </li>
+          <% else %>
+            <% post.recent_comments.each do |comment| %>
+              <li>
+                  <%= comment.users.name %>: <%= comment.text %>
+              </li>
+            <% end %>
+          <% end %>
+        </ul>
+      <% end %>
+    </div>
+
+</section>
