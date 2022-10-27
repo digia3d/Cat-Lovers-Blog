@@ -13,9 +13,9 @@
     </div>
 
     <div class="Uposts">
-      <%= user.posts.each do |post| %>
+      <%= @user.posts.each do |post| %>
         <div class="postL">
-          <h3><%= link_to post.title, post_path(@user, post) %></h3>
+          <h3><%= link_to post.title, user_post_path(@user, post) %></h3>
           <p>
             <%= post.text %>
           </p>
@@ -27,16 +27,16 @@
           </span>
         </div>
         <ul class="commentP">
-          <% if post.recent_comments.length == 0 %>
+          <% if post.comments.length == 0 %>
             <li>
               <p>
                 No comments yet
               </p>
             </li>
           <% else %>
-            <% post.recent_comments.each do |comment| %>
+            <% post.comments.each do |comment| %>
               <li>
-                  <%= comment.users.name %>: <%= comment.text %>
+                  <%= comment.author.name %>: <%= comment.text %>
               </li>
             <% end %>
           <% end %>

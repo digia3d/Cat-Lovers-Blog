@@ -23,7 +23,6 @@
     <% else %>
       <% @post.comments.each do |comment| %>
         <li>
-          <%= comment.users.name %>:
           <%= comment.text %>
         </li>
       <% end %>
