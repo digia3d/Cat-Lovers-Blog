@@ -75,4 +75,4 @@ end
 
 gem 'rubocop', '>= 1.0', '< 2.0'
 
-gem "mini_magick"
+gem 'mini_magick'

@@ -11,10 +11,6 @@ RSpec.describe 'Users', type: :request do
     it "should render 'index' template" do
       expect(response).to render_template('index')
     end
-
-    it 'should return the correct placeholder text' do
-      expect(response.body).to include('Here is list of all users and their number of posts')
-    end
   end
 
   describe 'GET /show' do
@@ -28,7 +24,7 @@ RSpec.describe 'Users', type: :request do
     end
 
     it 'should return the correct placeholder text' do
-      expect(response.body).to include('Here is the profile page of user with id')
+      expect(response.body).to include('Show all posts')
     end
   end
 end

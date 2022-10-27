@@ -2,16 +2,16 @@
 
   <div class="postL">
     <h3>
-      <%= @post.title %> by <%= @post.users.name %>
+      <%= @post.title %>
     </h3>
     <p>
       <%= @post.text %>
     </p>
     <span class="like">
-      Likes: <%= post.likes.count || 0 %>
+      Likes: <%= @post.likes.count || 0 %>
     </span>
     <span class="comment">
-      Comments: <%= post.comments.count || 0 %>
+      Comments: <%= @post.comments.count || 0 %>
     </span>
   </div>
 
