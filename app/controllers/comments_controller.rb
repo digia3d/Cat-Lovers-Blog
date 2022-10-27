@@ -11,4 +11,10 @@ class CommentsController < ApplicationController
     @comment.save if @comment.valid?
     redirect_to user_posts_path(@user)
   end
+
+  private
+
+  def comment_params
+    params.require(:comment).permit(:text, :post_id)
+  end
 end
