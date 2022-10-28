@@ -1,0 +1,6 @@
+<%= form_with model: Like do |form| %>
+  <%= form.hidden_field :post_id, value: post %>
+  <div>
+    <%= form.submit "Like" %>
+  </div>
+<% end %>

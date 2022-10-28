@@ -11,10 +11,10 @@
       </p>
     </div>
   </div>
-
-  <h2>
-    <%= link_to 'Add a new post', new_user_post_path(@user) %>
-  </h2>
+  
+  <h3>
+    <%= link_to 'Add new Post', new_post_path %>
+  </h3>
 
   <div class="Uposts">
     <%= @user.posts.each do |post| %>

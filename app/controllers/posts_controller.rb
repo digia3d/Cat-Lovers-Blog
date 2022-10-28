@@ -12,12 +12,12 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(params[:post])
+    @post = Post.new(post_params)
     @user = current_user
-    @post.users = @user
+    @post.author = @user
 
     if @post.save
-      redirect_to user_post_path(@user, @post)
+      redirect_to user_posts_url(@user)
     else
       render :new, :status => :unprocessable_entity
     end
@@ -26,6 +26,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :body)
+    params.require(:post).permit(:title, :text)
   end
 end
