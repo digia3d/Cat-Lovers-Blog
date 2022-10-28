@@ -8,11 +8,14 @@
       <%= @post.text %>
     </p>
     <span class="like">
-      Likes: <%= @post.likes.count || 0 %>
+      Likes: <%= @post.likes_counter || 0 %>
     </span>
     <span class="comment">
-      Comments: <%= @post.comments.count || 0 %>
+      Comments: <%= @post.comments_counter || 0 %>
     </span>
+      <%= form_with url: "/posts/#{@post.id}/likes", scope: :like do |form| %>
+      <%= form.submit "Like" %>
+      <% end %>
   </div>
 
   <ul class="commentP">
@@ -23,7 +26,7 @@
     <% else %>
       <% @post.comments.each do |comment| %>
         <li>
-          <%= comment.text %>
+          <% comment.text %>
         </li>
       <% end %>
     <% end %>
