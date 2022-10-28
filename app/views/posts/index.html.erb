@@ -24,10 +24,10 @@
           <%= post.text %>
         </p>
         <span class="like">
-          Likes: <%= post.likes.count || 0 %>
+          Likes: <%= post.likes_counter || 0 %>
         </span>
         <span class="comment">
-          Comments: <%= post.comments.count || 0 %>
+          Comments: <%= post.comments_counter || 0 %>
         </span>
         
         <h4><%= render partial: 'likes/form', locals: {post: post} %></h4>
