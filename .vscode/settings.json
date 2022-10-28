@@ -6,7 +6,7 @@
       "port": 5432,
       "driver": "PostgreSQL",
       "name": "Postgres Local",
-      "database": "postgres",
+      "database": "Blog_App_development",
       "username": "postgres",
       "password": "05062312"
     }
