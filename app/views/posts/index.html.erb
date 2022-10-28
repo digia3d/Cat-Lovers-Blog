@@ -1,47 +1,55 @@
 <section class="indexP">
 
-    <div class="singleU">
-      <div class="photo">
-        <img src="<%= @user.photo %>" alt="<%= @user.name %> thumbnail" />
-      </div>
-      <div class="name">
-        <h2><%= @user.name %></h2>
-        <p>
-          Number of posts: <%= @user.posts_counter %>
-        </p>
-      </div>
+  <div class="singleU">
+    <div class="photo">
+      <img src="<%= @user.photo %>" alt="<%= @user.name %> thumbnail" />
     </div>
+    <div class="name">
+      <h2><%= @user.name %></h2>
+      <p>
+        Number of posts: <%= @user.posts_counter %>
+      </p>
+    </div>
+  </div>
 
-    <div class="Uposts">
-      <%= @user.posts.each do |post| %>
-        <div class="postL">
-          <h3><%= link_to post.title, user_post_path(@user, post) %></h3>
-          <p>
-            <%= post.text %>
-          </p>
-          <span class="like">
-            Likes: <%= post.likes.count || 0 %>
-          </span>
-          <span class="comment">
-            Comments: <%= post.comments.count || 0 %>
-          </span>
-        </div>
-        <ul class="commentP">
-          <% if post.comments.length == 0 %>
+  <h2>
+    <%= link_to 'Add a new post', new_user_post_path(@user) %>
+  </h2>
+
+  <div class="Uposts">
+    <%= @user.posts.each do |post| %>
+      <div class="postL">
+        <h3><%= link_to post.title, user_post_path(@user, post) %></h3>
+        <p>
+          <%= post.text %>
+        </p>
+        <span class="like">
+          Likes: <%= post.likes.count || 0 %>
+        </span>
+        <span class="comment">
+          Comments: <%= post.comments.count || 0 %>
+        </span>
+        
+        <h4><%= render partial: 'likes/form', locals: {post: post} %></h4>
+        
+      </div>
+      <ul class="commentP">
+        <% if post.comments.length == 0 %>
+          <li>
+            <p>
+              No comments yet
+            </p>
+          </li>
+        <% else %>
+          <% post.comments.each do |comment| %>
             <li>
-              <p>
-                No comments yet
-              </p>
+              <%= comment.author.name %>: <%= comment.text %>
             </li>
-          <% else %>
-            <% post.comments.each do |comment| %>
-              <li>
-                  <%= comment.author.name %>: <%= comment.text %>
-              </li>
-            <% end %>
           <% end %>
-        </ul>
-      <% end %>
-    </div>
+        <% end %>
+        <h4><%= render partial: 'comments/form', locals: {post: post} %></h4>
+      </ul>
+    <% end %>
+  </div>
 
 </section>
