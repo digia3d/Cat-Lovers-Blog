@@ -17,7 +17,7 @@ class PostsController < ApplicationController
     @post.author = @user
 
     if @post.save
-      redirect_to user_posts_url(@user)
+      redirect_to user_posts_path(@user, @post)
     else
       render :new, :status => :unprocessable_entity
     end

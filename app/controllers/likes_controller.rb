@@ -6,10 +6,10 @@ class LikesController < ApplicationController
   def create
     @like = Like.new(like_params)
     @user = current_user
-    @like.users = @user
+    @like.author = @user
 
     @like.save if @like.valid?
-    redirect_to user_posts_path(@user)
+    redirect_to user_posts_path(@user, @post)
   end
 
   private
