@@ -13,7 +13,7 @@
   </div>
   
   <h3>
-    <%= link_to 'Add new Post', new_post_path %>
+    <%= link_to 'Add new Post', new_user_post_path(@user) %>
   </h3>
 
   <div class="Uposts">
@@ -30,7 +30,7 @@
           Comments: <%= post.comments_counter || 0 %>
         </span>
         
-        <h4><%= render partial: 'likes/form', locals: {post: post} %></h4>
+        
         
       </div>
       <ul class="commentP">
@@ -47,7 +47,7 @@
             </li>
           <% end %>
         <% end %>
-        <h4><%= render partial: 'comments/form', locals: {post: post} %></h4>
+        
       </ul>
     <% end %>
   </div>
