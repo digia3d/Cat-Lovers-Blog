@@ -4,7 +4,7 @@ class Comment < ApplicationRecord
 
   after_commit :update_comment_counter, on: :create
 
-  validates :text, presence: true
+  validates :text, presence: true, length: { minimum: 2, maximum: 250 }
 
   private
 
