@@ -18,7 +18,7 @@ RSpec.describe Comment, type: :model do
     end
 
     it 'is not valid without an author' do
-      subject.author = nil
+      subject.author = 'nil'
       expect(subject).to_not be_valid
     end
   end
