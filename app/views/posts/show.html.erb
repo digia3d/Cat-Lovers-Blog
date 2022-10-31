@@ -13,7 +13,7 @@
     <span class="comment">
       Comments: <%= @post.comments_counter || 0 %>
     </span>
-      <%= form_with url: "/posts/#{@post.id}/likes", scope: :like do |form| %>
+      <%= form_with url: user_post_likes_path(@user, @post), method: :post do |form| %>
       <%= form.submit "Like" %>
       <% end %>
   </div>
@@ -26,10 +26,14 @@
     <% else %>
       <% @post.comments.each do |comment| %>
         <li>
-          <% comment.text %>
+          <%= comment.author.name %>: <%= comment.text %>
         </li>
+        
       <% end %>
     <% end %>
+    <button class="commUbtn">
+    <%= link_to "Add comment",  new_user_post_comment_path(@user, @post)%>
+    </button>
   </ul>
 </section>
 

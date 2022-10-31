@@ -1,20 +1,17 @@
 class LikesController < ApplicationController
-  def new
-    @like = Like.new
-  end
-
   def create
-    @like = Like.new(like_params)
-    @user = current_user
-    @like.author = @user
+    post = Post.find(params[:post_id])
+    user = User.find(params[:user_id])
 
-    @like.save if @like.valid?
-    redirect_to user_posts_path(@user, @post)
-  end
+    @like = Like.new
+    @like.author = current_user
+    @like.post = post
 
-  private
-
-  def like_params
-    params.require(:like).permit(:post_id)
+    if @like.save
+      flash[:success] = 'Liked!'
+    else
+      flash[:error] = 'Something went wrong...'
+    end
+    redirect_to user_post_path(user, post)
   end
 end
