@@ -20,7 +20,7 @@
 
 .commentP {
   list-style: none;
-  border: 2px solid black;
+  border: 2px solid  rgb(66, 93, 230);
   margin-top: 1px;
   padding: 10px;
 }
@@ -33,4 +33,5 @@
 .like,
 .comment {
   align-self: flex-end;
+  margin: 0 10px 5px 0;
 }
