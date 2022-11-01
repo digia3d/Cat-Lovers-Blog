@@ -7,3 +7,8 @@ input {
   background-color: rgb(215, 159, 5);
   color: rgb(10, 12, 65);
 }
+
+img {
+  width: 120px;
+  height: 100px;
+}

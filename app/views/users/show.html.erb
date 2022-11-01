@@ -2,7 +2,7 @@
 <h1>One User</h1>
     <div class="oneuser">
         <div class="photo">
-          <img src="<%= @user.photo %>" alt="<%= @user.name %> thumbnail" />
+          <%=image_tag("thumbnail.png", alt: "Example Image")%>
         </div>
         <div class="name">
           <h2><%= @user.name %></h2>
