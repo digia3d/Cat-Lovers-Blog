@@ -39,7 +39,7 @@ RSpec.describe 'posts/show.html.erb', type: :feature do
   end
 
   describe 'views/posts_show' do
-    before(:each) {visit user_post_path(@user1, @post_one)}
+    before(:each) { visit user_post_path(@user1, @post_one) }
 
     it 'should display the post title' do
       expect(page).to have_content @post_one.title

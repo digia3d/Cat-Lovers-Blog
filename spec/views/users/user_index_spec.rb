@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'User index', type: :system do
-  before (:each) do
+  before(:each) do
     @user1 = User.create(
       name: 'Tom',
       photo: '/app/assets/images/thumbnail.png',
@@ -20,10 +20,10 @@ RSpec.describe 'User index', type: :system do
   end
 
   describe 'views/users' do
-    before(:each) {visit users_path(@user)}
+    before(:each) { visit users_path(@user) }
 
     scenario 'shows the user index page' do
-      @users.each do |user|
+      @users.each do |_user|
         expect(page).to have_content 'Blog App'
       end
     end
@@ -49,4 +49,3 @@ RSpec.describe 'User index', type: :system do
     end
   end
 end
-

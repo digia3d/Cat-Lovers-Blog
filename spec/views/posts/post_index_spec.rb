@@ -39,7 +39,7 @@ RSpec.describe 'Post index', type: :feature do
   end
 
   describe 'views/posts' do
-    before(:each) {visit user_posts_path(@user1)}
+    before(:each) { visit user_posts_path(@user1) }
 
     it 'displays users profile photo' do
       expect(page.html).to include('thumbnail.png')
@@ -83,10 +83,9 @@ RSpec.describe 'Post index', type: :feature do
       expect(page).to have_content 'Add new Post'
     end
 
-    #it 'redirects to the posts page when a post is clicked' do
-      #within all('.post').first do
-        #click_link @post_one.title
-      #end
-    #end
+    it 'redirects to the post form when a link is clicked' do
+      click_link 'Add new Post'
+      expect(page).to have_content 'New Post'
+    end
   end
 end
