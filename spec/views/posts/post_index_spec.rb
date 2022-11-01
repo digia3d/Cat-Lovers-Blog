@@ -83,10 +83,10 @@ RSpec.describe 'Post index', type: :feature do
       expect(page).to have_content 'Add new Post'
     end
 
-    it 'redirects to the posts page when a post is clicked' do
-      within all('.post').first do
-        click_link @post_one.title
-      end
-    end
+    #it 'redirects to the posts page when a post is clicked' do
+      #within all('.post').first do
+        #click_link @post_one.title
+      #end
+    #end
   end
 end
