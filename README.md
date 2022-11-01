@@ -31,6 +31,15 @@ Things you may want to cover:
     - to run the file use : ``rails server``
     - and then run: ``rspec``.
 
+### Testing
+
+In order to run tests for this project make sure you have installed all previously mentioned [prerequisites](#prerequisites) section, then run the code below.
+
+- Run all tests
+  - This should run all tests using 'RSpec-Rails' and (in some cases) 'Capybara'
+  ```sh
+  bundle exec rspec
+
 ## Author
 
 👤 **Aleksandra Ujvari**

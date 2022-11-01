@@ -1,26 +1,25 @@
 require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
-  describe 'GET /index' do
-    before(:example) { get user_posts_path(1) }
-
-    it 'returns http success' do
-      expect(response).to have_http_status(:success)
+  describe 'GET #index' do
+    let(:user) do
+      User.create!(
+        name: 'John',
+        bio: 'I am a software developer',
+        posts_counter: 2
+      )
     end
-
-    it 'renders the index template' do
-      expect(response).to render_template(:index)
-    end
-  end
-
-  describe 'GET /show' do
-    before(:example) { get user_post_path(1, 1) }
-    it 'should be success' do
+    before(:example) { get("/users/#{user.id}/posts") }
+    it 'should have a http success status' do
       expect(response).to have_http_status(:ok)
     end
 
-    it "should render 'show' template" do
-      expect(response).to render_template('show')
+    it 'renders corret page template' do
+      expect(response.body).to include('John')
+    end
+
+    it 'renders index tempate' do
+      expect(response).to render_template(:index)
     end
   end
 end
