@@ -1,0 +1,26 @@
+example_id                                   | status  | run_time        |
+-------------------------------------------- | ------- | --------------- |
+./spec/helpers/posts_helper_spec.rb[1:1]     | pending | 0.00001 seconds |
+./spec/helpers/users_helper_spec.rb[1:1]     | pending | 0.00002 seconds |
+./spec/models/post_spec.rb[1:1]              | passed  | 0.00287 seconds |
+./spec/models/post_spec.rb[1:2]              | passed  | 0.01477 seconds |
+./spec/models/post_spec.rb[1:3]              | passed  | 0.00239 seconds |
+./spec/models/post_spec.rb[1:4:1]            | passed  | 0.01579 seconds |
+./spec/models/user_spec.rb[1:1]              | passed  | 0.00808 seconds |
+./spec/models/user_spec.rb[1:2]              | passed  | 0.00547 seconds |
+./spec/models/user_spec.rb[1:3]              | passed  | 0.00412 seconds |
+./spec/models/user_spec.rb[1:4]              | passed  | 0.00463 seconds |
+./spec/requests/posts_spec.rb[1:1:1]         | passed  | 0.01611 seconds |
+./spec/requests/posts_spec.rb[1:1:2]         | passed  | 0.01397 seconds |
+./spec/requests/posts_spec.rb[1:1:3]         | passed  | 0.02796 seconds |
+./spec/requests/users_spec.rb[1:1:1]         | passed  | 0.08553 seconds |
+./spec/requests/users_spec.rb[1:1:2]         | passed  | 0.00835 seconds |
+./spec/requests/users_spec.rb[1:2:1]         | passed  | 0.01706 seconds |
+./spec/requests/users_spec.rb[1:2:2]         | passed  | 0.02359 seconds |
+./spec/requests/users_spec.rb[1:2:3]         | passed  | 0.0167 seconds  |
+./spec/views/posts/post_show_spec.rb[1:1]    | pending | 0.00003 seconds |
+./spec/views/users/user_index_spec.rb[1:1:1] | passed  | 0.21029 seconds |
+./spec/views/users/user_index_spec.rb[1:1:2] | passed  | 0.24374 seconds |
+./spec/views/users/user_index_spec.rb[1:1:3] | passed  | 1.61 seconds    |
+./spec/views/users/user_index_spec.rb[1:1:4] | passed  | 0.40853 seconds |
+./spec/views/users/user_show_spec.rb[1:1]    | pending | 0.00002 seconds |
