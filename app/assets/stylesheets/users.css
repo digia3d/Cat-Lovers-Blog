@@ -64,18 +64,6 @@ section {
   align-items: center;
 }
 
-.showUbtn {
-  display: flex;
-  justify-content: center;
-  align-self: center;
-  align-items: center;
-  width: 200px;
-  height: 50px;
-  font-size: 1rem;
-  background-color: rgb(215, 159, 5);
-  color: rgb(10, 12, 65);
-}
-
 a {
   text-decoration: none;
   color: rgb(215, 159, 5);
