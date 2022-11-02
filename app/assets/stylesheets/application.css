@@ -6,9 +6,52 @@ html {
 input {
   background-color: rgb(215, 159, 5);
   color: rgb(10, 12, 65);
+  width: 300px;
+}
+
+#user_remember_me {
+  width: 20px;
+  align-self: start;
 }
 
 img {
   width: 120px;
   height: 100px;
+}
+
+input[type="submit"] {
+  background-color: rgb(215, 159, 5);
+  color: rgb(10, 12, 65);
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+}
+
+form div:not(:has(input[type='checkbox'])) {
+  display: flex;
+  flex-direction: column;
+}
+
+form :is(input:not([type='submit']), textarea) {
+  margin: 5px;
+  outline: none;
+  padding: 0.25rem 0.5rem;
+}
+
+form button {
+  background-color: rgb(215, 159, 5);
+  border-radius: 5px;
+  width: 100px;
+  height: 30px;
+}
+
+body {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+textarea {
+  height: 80px;
+  width: 300px;
 }
