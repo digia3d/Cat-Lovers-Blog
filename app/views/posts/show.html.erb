@@ -13,9 +13,12 @@
     <span class="comment">
       Comments: <%= @post.comments_counter || 0 %>
     </span>
-      <%= form_with url: user_post_likes_path(@user, @post), method: :post do |form| %>
+    <div class="like-action">
+    <%= form_with url: user_post_likes_path(@user, @post), method: :post do |form| %>
       <%= form.submit "Like" %>
       <% end %>
+    </div>
+      
   </div>
 
   <ul class="commentP">
