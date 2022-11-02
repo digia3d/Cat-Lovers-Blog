@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BlogApp</title>
+    <title>Cat Blog</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -14,6 +14,14 @@
   </head>
 
   <body>
+    <div>
+      <h1>Cat Blog</h1>
+      <div class="sign-put">
+        <%= button_to "Sign out", destroy_user_session_path, method: :delete if user_signed_in? %> 
+      </div>
+    </div>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
   <div class="main-container">
     <%= yield %>
   </div>

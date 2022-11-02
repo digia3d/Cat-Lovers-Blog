@@ -33,6 +33,7 @@ gem 'jbuilder'
 # gem "redis", "~> 4.0"
 
 gem 'devise'
+gem 'letter_opener'
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
