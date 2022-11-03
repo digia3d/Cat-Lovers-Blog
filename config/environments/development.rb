@@ -46,7 +46,7 @@ Rails.application.configure do # rubocop:disable Metrics/BlockLength
   config.action_mailer.smtp_settings = {
     address: 'smtp.gmail.com',
     port: 587,
-    domain: 'gmail.com',
+    domain: 'mail.google.com',
     user_name: 'ujvari65@gmail.com',
     password: '05062312',
     authentication: 'plain',
