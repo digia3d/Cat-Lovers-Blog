@@ -2,8 +2,14 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem 'erb-formatter'
+gem 'rubocop', '>= 1.0', '< 2.0'
 
 ruby '3.1.2'
+
+gem 'devise'
+gem 'letter_opener'
+
+gem 'cancancan'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.4'
@@ -32,13 +38,8 @@ gem 'jbuilder'
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
-gem 'devise'
-gem 'letter_opener'
-
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
-
-gem 'cancancan'
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
@@ -85,5 +86,3 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
-
-gem 'rubocop', '>= 1.0', '< 2.0'
