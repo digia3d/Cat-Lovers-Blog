@@ -17,6 +17,7 @@
   <div class="main-container">
     <div>
       <h1>Cat Blog</h1>
+      <%= @current_user&.name || 'Guest' %><%= ' [admin]' if current_user&.role === 'admin' %>
       <div class="sign-put">
         <%= button_to "Sign out", destroy_user_session_path, method: :delete if user_signed_in? %> 
       </div>
