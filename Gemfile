@@ -53,7 +53,7 @@ gem 'image_processing', '~> 1.12', '>= 1.12.2'
 gem 'shrine', '~> 3.4'
 
 # Use Sass to process CSS
-gem "sassc-rails"
+gem 'sassc-rails'
 
 gem 'devise-jwt'
 gem 'rack-cors'
