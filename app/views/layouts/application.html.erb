@@ -14,18 +14,23 @@
   </head>
 
   <body>
+  <header>
   <div class="main-container">
-    <div>
+    
+    <div class="home">
       <h1>Cat Lovers Blog</h1>
       <%= @current_user&.name || 'Guest' %><%= ' [admin]' if current_user&.role === 'admin' %>
-      <div class="sign-put">
-        <%= button_to "Sign out", destroy_user_session_path, method: :delete if user_signed_in? %> 
-      </div>
-    </div>
+
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
   
     <%= yield %>
-  </div>
+      </div>
+            <div class="sign-put">
+        <%= button_to "Sign out", destroy_user_session_path, method: :delete if user_signed_in? %> 
+      </div>
+    </div>
+    </header>
   </body>
 </html>
