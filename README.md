@@ -40,6 +40,20 @@ In order to run tests for this project make sure you have installed all previous
   ```sh
   bundle exec rspec
 
+## Routes for testing
+
+http://localhost:3000/api/v1/users/1/posts/1/comments/
+
+http://localhost:3000/api/v1/users/1/posts/1
+
+http://localhost:3000/api/v1/users/1/posts
+
+http://localhost:3000/api/v1/users/1
+
+http://localhost:3000/api/v1/users
+
+http://localhost:3000/api/v1/users/1/posts/1/comments/new
+
 ## Author
 
 👤 **Aleksandra Ujvari**

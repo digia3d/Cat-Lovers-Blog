@@ -1,11 +1,42 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: rgb(6, 36, 1);
+}
+
 html {
-  background-color: rgb(10, 12, 65);
-  color: rgb(215, 159, 5);
+  background-color: rgb(216, 141, 2);
+  background-image: url(https://o.remove.bg/downloads/17a4bab9-0835-4670-9694-7eb93d638529/cat-6617604_1920-removebg-preview.png);
+  background-repeat: no-repeat;
+  background-position-y: bottom;
+  background-size: contain;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: rgb(216, 141, 2);
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 88vh;
+}
+
+body {
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
 input {
-  background-color: rgb(215, 159, 5);
-  color: rgb(10, 12, 65);
+  background-color: rgb(144, 123, 104);
   width: 300px;
 }
 
@@ -20,8 +51,7 @@ img {
 }
 
 input[type="submit"] {
-  background-color: rgb(215, 159, 5);
-  color: rgb(10, 12, 65);
+  background-color: rgb(144, 123, 104);
   width: 100px;
   height: 30px;
   border-radius: 5px;
@@ -39,16 +69,10 @@ form :is(input:not([type='submit']), textarea) {
 }
 
 form button {
-  background-color: rgb(215, 159, 5);
+  background-color: rgb(144, 123, 104);
   border-radius: 5px;
   width: 100px;
   height: 30px;
-}
-
-body {
-  align-items: center;
-  display: flex;
-  justify-content: center;
 }
 
 textarea {
