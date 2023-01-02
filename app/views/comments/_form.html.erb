@@ -1,0 +1,10 @@
+<section class="main">
+  <span>Add your comments ... </span>
+  <%= form_with model: @comment, url: user_post_comments_path, method: :post, locals: true, scope: :new_comment do |f| %>
+    <div>
+      <%= f.label :text %>
+      <%= f.text_area :text %>
+    </div>
+    <%= f.submit 'Add Comment' %>
+  <% end %>
+</section>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cat Lovers Blog</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "posts.css" %>
+    <%= stylesheet_link_tag "users.css" %>
+    
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+  <header>
+  <div class="main-container">
+    
+    <div class="home">
+      <h1>Cat Lovers Blog</h1>
+      <%= @current_user&.name || 'Guest' %><%= ' [admin]' if current_user&.role === 'admin' %>
+
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+  
+    <%= yield %>
+      </div>
+            <div class="sign-put">
+        <%= button_to "Sign out", destroy_user_session_path, method: :delete if user_signed_in? %> 
+      </div>
+    </div>
+    </header>
+  </body>
+</html>

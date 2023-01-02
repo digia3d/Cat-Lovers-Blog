@@ -1,0 +1,55 @@
+<section class="indexP">
+<h1>User Posts</h1>
+
+  <div class="singleU">
+    <div class="photo">
+      <img src="<%= @user.photo %>" alt="<%= @user.name %> 'thumbnail'" />
+    </div>
+    <div class="name">
+      <h2><%= @user.name %></h2>
+      <p>
+        Number of posts: <%= @user.posts_counter %>
+      </p>
+    </div>
+  </div>
+  
+  <h3 class="addPL">
+    <%= link_to 'Add new Post', new_user_post_path(@user) %>
+  </h3>
+
+  <div class="Uposts">
+    <%= @user.posts.each do |post| %>
+      <div class="postL">
+        <h3><%= link_to post.title, user_post_path(@user, post) %></h3>
+        <p>
+          <%= post.text %>
+        </p>
+        <span class="like">
+          Likes: <%= post.likes_counter || 0 %>
+        </span>
+        <span class="comment">
+          Comments: <%= post.comments_counter || 0 %>
+        </span>
+
+      </div>
+      <ul class="commentP">
+        <% if post.comments.empty? %>
+          <li>
+            <p>
+              No comments yet
+            </p>
+          </li>
+        <% else %>
+          <% post.comments.each do |comment| %>
+            <li>
+              <%= comment.author.name %>: <%= comment.text %>
+            </li>
+          <% end %>
+        <% end %>
+        
+      </ul>
+      
+    <% end %>
+  </div>
+
+</section>

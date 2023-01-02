@@ -1,0 +1,60 @@
+<section class="showP">
+<h1>Post</h1>
+  <div class="postL">
+    <h3>
+      <%= @post.title %> by <%= @user.name %>
+    </h3>
+    <p>
+      <%= @post.text %>
+    </p>
+    <span class="like">
+      Likes: <%= @post.likes_counter || 0 %>
+    </span>
+    <span class="comment">
+      Comments: <%= @post.comments_counter || 0 %>
+    </span>
+    <div class="like-action">
+    <%= form_with url: user_post_likes_path(@user, @post), method: :post do |form| %>
+      <%= form.submit "Like" %>
+      <% end %>
+    </div>
+      
+  </div>
+
+  <ul class="commentP">
+    <% if @post.comments.length == 0 %>
+      <p>
+        No comments yet
+      </p>
+    <% else %>
+      <% @post.comments.each do |comment| %>
+        <li>
+          <%= comment.author.name %>: <%= comment.text %>
+        </li>
+        <% if can? :destroy, comment %>
+          <%= link_to "Delete", user_post_comment_path(@user, @post, comment), data: {
+              turbo_method: :delete,
+              turbo_confirm: "Are you sure?"
+            }  %>
+          <% end %>
+
+      <% end %>
+    <% end %>
+    <button class="commUbtn">
+    <%= link_to "Add comment",  new_user_post_comment_path(@user, @post)%>
+    </button>
+  </ul>
+  <ul>
+    <li>
+      <% if can? :destroy, @post %>
+        <%= link_to "Delete post", user_post_path(@post), data: {
+              turbo_method: :delete,
+              turbo_confirm: "Are you sure you want to delete this post?"
+                      } %>
+      <% end %>
+    </li>
+  </ul>
+      <%= link_to 'Back', user_posts_path %>
+</section>
+
+
